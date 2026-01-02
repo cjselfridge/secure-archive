@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #09090b; /* Zinc-950 (Rich dark gray, not pitch black) */
+  --foreground: #ffffff; /* Pure White */
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  /* This forces the text to be readable */
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+/* Optional: Adds a very faint grid so it doesn't feel like a void */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Make bold text pop */
+h1, h2, h3, h4, b, strong {
+  color: #ffffff;
+}
